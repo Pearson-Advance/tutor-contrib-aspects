@@ -165,6 +165,11 @@ setup(
     include_package_data=True,
     python_requires=">=3.7",
     install_requires=load_requirements("requirements/base.in"),
+    extras_require={
+        "private": [
+            "course_operations @ git+ssh://git@github.com/Pearson-Advance/course_operations.git@master#egg=course_operations",
+        ],
+    },
     entry_points={"tutor.plugin.v1": ["aspects = tutoraspects.plugin"]},
     classifiers=[
         "Development Status :: 3 - Alpha",
